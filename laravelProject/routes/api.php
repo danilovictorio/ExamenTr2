@@ -2,8 +2,7 @@
 use Barryvdh\Cors\HandleCors;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ArchivoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +15,8 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
-//Route::post('/register', [UserController::class, 'register']);
-//Route::post('/login-user', [UserController::class, 'login']);
+Route::post('/crear-archivo', [ArchivoController::class, 'crear']);
+Route::get('/mostrar-archivo', [ArchivoController::class, 'mostrar']);
+Route::put('/modificar-archivo/{id}', [ArchivoController::class, 'modificar']);
+Route::delete('/borrar-archivo/{id}', [ArchivoController::class, 'borrar']);
+
